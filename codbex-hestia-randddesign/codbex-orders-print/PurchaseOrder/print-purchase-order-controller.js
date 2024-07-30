@@ -2,7 +2,7 @@ const app = angular.module('templateApp', ['ideUI', 'ideView']);
 app.controller('templateController', ['$scope', '$http', 'ViewParameters', function ($scope, $http, ViewParameters) {
     const params = ViewParameters.get();
 
-    const printPurchaseOrderUrl = "/services/ts/codbex-hestia-print/codbex-orders-print/PurchaseOrder/api/PurchaseOrderService.ts/" + params.id;
+    const printPurchaseOrderUrl = "/services/ts/codbex-hestia-randddesign/codbex-orders-print/PurchaseOrder/api/PurchaseOrderService.ts/" + params.id;
 
     $http.get(printPurchaseOrderUrl)
         .then(function (response) {

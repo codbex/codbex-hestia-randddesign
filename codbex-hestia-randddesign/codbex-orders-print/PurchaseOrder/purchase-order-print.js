@@ -1,7 +1,7 @@
 const viewData = {
     id: 'purchase-order-print',
     label: 'Print',
-    link: '/services/web/codbex-hestia-print/codbex-orders-print/PurchaseOrder/print-purchase-order.html',
+    link: '/services/web/codbex-hestia-randddesign/codbex-orders-print/PurchaseOrder/print-purchase-order.html',
     perspective: 'PurchaseOrder',
     view: 'PurchaseOrder',
     type: 'entity',

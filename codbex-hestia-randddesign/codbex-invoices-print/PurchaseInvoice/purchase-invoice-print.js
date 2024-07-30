@@ -1,7 +1,7 @@
 const viewData = {
     id: 'purchase-invoice-print',
     label: 'Print',
-    link: '/services/web/codbex-hestia-print/codbex-invoices-print/PurchaseInvoice/print-purchase-invoice.html',
+    link: '/services/web/codbex-hestia-randddesign/codbex-invoices-print/PurchaseInvoice/print-purchase-invoice.html',
     perspective: 'purchaseinvoice',
     view: 'PurchaseInvoice',
     type: 'entity',

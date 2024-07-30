@@ -1,5 +1,5 @@
 {
-    "module": "codbex-hestia-print/codbex-orders-print/PurchaseOrder/purchase-order-print.js",
+    "module": "codbex-hestia-randddesign/codbex-orders-print/PurchaseOrder/purchase-order-print.js",
     "extensionPoint": "codbex-orders-custom-action",
     "description": "Print Purchase Order Custom Action"
 }
