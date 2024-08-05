@@ -10,8 +10,10 @@
         <script type="text/javascript" src="/services/js/resources-core/services/loader.js?id=ide-view-js"></script>
         <link type="text/css" rel="stylesheet" href="/services/js/resources-core/services/loader.js?id=ide-view-css" />
         <theme></theme>
-        <link rel="stylesheet" href="/services/web/codbex-hestia-randddesign/codbex-invoices-print/SalesInvoice/print-sales-invoice.css">
-        <script src="/services/web/codbex-hestia-randddesign/codbex-invoices-print/SalesInvoice/print-sales-invoice-controller.js">
+        <link rel="stylesheet"
+            href="/services/web/codbex-hestia-randddesign/codbex-invoices-print/SalesInvoice/print-sales-invoice.css">
+        <script
+            src="/services/web/codbex-hestia-randddesign/codbex-invoices-print/SalesInvoice/print-sales-invoice-controller.js">
         </script>
     </head>
 
@@ -23,14 +25,13 @@
                         <table>
                             <tr>
                                 <td class="title">
-                                    <img src="https://www.codbex.com/favicon.png"
-                                        style="width: 100%; max-width: 50px" />
+                                    <img src="https://shorturl.at/NCWw6" style="width: 100%; max-width: 100px" />
                                 </td>
 
                                 <td>
-                                    Invoice #: <b>{{Invoice.Number}}</b><br />
-                                    Invoice Date: <b>{{Invoice.Date | date: 'yyyy-MM-dd'}}</b><br />
-                                    Due Date: <b>{{Invoice.Due | date: 'yyyy-MM-dd'}}</b>
+                                    Фактура #: <b>{{Invoice.Number}}</b><br />
+                                    Дата на фактуриране: <b>{{Invoice.Date | date: 'yyyy-MM-dd'}}</b><br />
+                                    Падежна дата: <b>{{Invoice.Due | date: 'yyyy-MM-dd'}}</b>
                                 </td>
                             </tr>
                         </table>
@@ -38,7 +39,7 @@
                 </tr>
             </table>
 
-            <div class="invoice-jumbo">Sales Invoice</div>
+            <div class="invoice-jumbo">ФАКТУРА ЗА ПРОДАЖБА</div>
 
             <table cellpadding="0" cellspacing="0">
                 <tr class="information">
@@ -55,7 +56,7 @@
                                     <b>{{Customer.Name}}</b><br />
                                     {{Customer.Contact}}<br />
                                     {{Customer.Email}}<br />
-                                    VAT #: <b>{{Customer.TIN}}</b>
+                                    ДДС #: <b>{{Customer.TIN}}</b>
                                 </td>
                             </tr>
                         </table>
@@ -65,9 +66,9 @@
 
             <table cellpadding="0" cellspacing="0">
                 <tr class="heading">
-                    <td>Payment Method</td>
-                    <td>Sent Via</td>
-                    <td>Conditions</td>
+                    <td>Метод на плащане</td>
+                    <td>Изпращане чрез</td>
+                    <td>Условия</td>
                 </tr>
 
                 <tr class="details">
@@ -78,12 +79,12 @@
             </table>
             <table cellpadding="0" cellspacing="0">
                 <tr class="heading">
-                    <td>Item</td>
-                    <td>Quantity</td>
-                    <td>Price</td>
-                    <td>Net</td>
-                    <td>VAT</td>
-                    <td>Gross</td>
+                    <td>Артикул</td>
+                    <td>Количество</td>
+                    <td>Цена</td>
+                    <td>Нето</td>
+                    <td>ДДС</td>
+                    <td>Бруто</td>
                 </tr>
 
                 <tr class="item" ng-repeat="next in InvoiceItems">
@@ -101,7 +102,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>Net: {{Invoice.Net| number}}</td>
+                    <td>Нето: {{Invoice.Net| number}}</td>
                 </tr>
                 <tr>
                     <td></td>
@@ -109,7 +110,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>Gross: {{Invoice.Gross| number}}</td>
+                    <td>Бруто: {{Invoice.Gross| number}}</td>
                 </tr>
                 <tr>
                     <td></td>
@@ -117,7 +118,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>Discount: {{Invoice.Discount| number}}</td>
+                    <td>Отстъпка: {{Invoice.Discount| number}}</td>
                 </tr>
                 <tr>
                     <td></td>
@@ -125,7 +126,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>Taxes: {{Invoice.Taxes| number}}</td>
+                    <td>Данъци: {{Invoice.Taxes| number}}</td>
                 </tr>
                 <tr>
                     <td></td>
@@ -133,7 +134,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>VAT: {{Invoice.VAT| number}}</td>
+                    <td>ДДС: {{Invoice.VAT| number}}</td>
                 </tr>
                 <tr class="total">
                     <td></td>
@@ -141,7 +142,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>Total: {{Invoice.Total| number}}</td>
+                    <td>Общо: {{Invoice.Total| number}}</td>
                 </tr>
             </table>
 
@@ -154,15 +155,15 @@
                         <table>
                             <tr>
                                 <td>
-                                    TIN #: <b>{{Company.TIN}}</b><br />
-                                    e-mail: {{Company.Email}}<br />
-                                    Phone: {{Company.Phone}}
+                                    ЕГН #: <b>{{Company.TIN}}</b><br />
+                                    Имейл: {{Company.Email}}<br />
+                                    Телефон: {{Company.Phone}}
                                 </td>
 
                                 <td>
                                     IBAN: <b>{{Company.IBAN}}</b><br />
-                                    SWIFT: {{Company.SWIFT}}<br />
-                                    Bank: {{Company.Bank}}
+                                    BIC: {{Company.SWIFT}}<br />
+                                    Банка: {{Company.Bank}}
                                 </td>
                             </tr>
                         </table>
@@ -170,7 +171,7 @@
                 </tr>
             </table>
 
-            <div class="invoice-footer">THANK YOU FOR YOUR BUSINESS!</div>
+            <div class="invoice-footer">Благодарим за доверието!</div>
 
         </div>
     </body>
