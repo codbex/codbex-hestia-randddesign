@@ -6,19 +6,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" sizes="any" href="data:;base64,iVBORw0KGgo=">
         <title dg-view-title></title>
-        <script type="text/javascript" src="purchase-order-print.js"></script>
+        <script type="text/javascript" src="sales-invoice-print.js"></script>
         <script type="text/javascript" src="/services/js/resources-core/services/loader.js?id=ide-view-js"></script>
         <link type="text/css" rel="stylesheet" href="/services/js/resources-core/services/loader.js?id=ide-view-css" />
         <theme></theme>
         <link rel="stylesheet"
-            href="/services/web/codbex-hestia-randddesign/codbex-orders-print/PurchaseOrder/print-purchase-order.css">
+            href="/services/web/codbex-hestia-randddesign/codbex-invoices-print/SalesInvoice/print-sales-invoice.css">
         <script
-            src="/services/web/codbex-hestia-randddesign/codbex-orders-print/PurchaseOrder/print-purchase-order-controller.js">
+            src="/services/web/codbex-hestia-randddesign/codbex-invoices-print/SalesInvoice/print-sales-invoice-controller.js">
         </script>
     </head>
 
     <body>
-        <div class="order-box">
+        <div class="invoice-box">
             <table cellpadding="0" cellspacing="0">
                 <tr class="top">
                     <td colspan="2">
@@ -29,9 +29,9 @@
                                 </td>
 
                                 <td>
-                                    Поръчка #: <b>{{Order.Number}}</b><br />
-                                    Дата на поръчка: <b>{{Order.Date | date: 'yyyy-MM-dd'}}</b><br />
-                                    Падежна дата: <b>{{Order.Due | date: 'yyyy-MM-dd'}}</b>
+                                    Фактура #: <b>{{Invoice.Number}}</b><br />
+                                    Дата на фактуриране: <b>{{Invoice.Date | date: 'yyyy-MM-dd'}}</b><br />
+                                    Падежна дата: <b>{{Invoice.Due | date: 'yyyy-MM-dd'}}</b>
                                 </td>
                             </tr>
                         </table>
@@ -39,7 +39,7 @@
                 </tr>
             </table>
 
-            <div class="order-jumbo">ПОРЪЧКА ЗА ПОКУПКА</div>
+            <div class="invoice-jumbo">ФАКТУРА ЗА ПРОДАЖБА</div>
 
             <table cellpadding="0" cellspacing="0">
                 <tr class="information">
@@ -53,10 +53,10 @@
                                 </td>
 
                                 <td>
-                                    <b>{{Supplier.Name}}</b><br />
-                                    {{Supplier.Contact}}<br />
-                                    {{Supplier.Email}}<br />
-                                    ДДС #: <b>{{Supplier.TIN}}</b>
+                                    <b>{{Customer.Name}}</b><br />
+                                    {{Customer.Contact}}<br />
+                                    {{Customer.Email}}<br />
+                                    ДДС #: <b>{{Customer.TIN}}</b>
                                 </td>
                             </tr>
                         </table>
@@ -72,22 +72,22 @@
                 </tr>
 
                 <tr class="details">
-                    <td>{{Order.PaymentMethod.Name}}</td>
-                    <td>{{Order.SentMethod.Name}}</td>
-                    <td>{{Order.Conditions}}</td>
+                    <td>{{Invoice.PaymentMethod}}</td>
+                    <td>{{Invoice.SentMethod}}</td>
+                    <td>{{Invoice.Conditions}}</td>
                 </tr>
             </table>
             <table cellpadding="0" cellspacing="0">
                 <tr class="heading">
                     <td>Артикул</td>
-                    <td>Коричество</td>
+                    <td>Количество</td>
                     <td>Цена</td>
                     <td>Нето</td>
                     <td>ДДС</td>
                     <td>Бруто</td>
                 </tr>
 
-                <tr class="item" ng-repeat="next in OrderItems">
+                <tr class="item" ng-repeat="next in InvoiceItems">
                     <td>{{next.Product}}</td>
                     <td>{{next.Quantity| number}}</td>
                     <td>{{next.Price| number}}</td>
@@ -100,37 +100,49 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>Нето: {{Order.Net| number}}</td>
+                    <td></td>
+                    <td></td>
+                    <td>Нето: {{Invoice.Net| number}}</td>
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>Бруто: {{Order.Gross| number}}</td>
+                    <td></td>
+                    <td></td>
+                    <td>Бруто: {{Invoice.Gross| number}}</td>
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>Отстъпка: {{Order.Discount| number}}</td>
+                    <td></td>
+                    <td></td>
+                    <td>Отстъпка: {{Invoice.Discount| number}}</td>
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>Данъци: {{Order.Taxes| number}}</td>
+                    <td></td>
+                    <td></td>
+                    <td>Данъци: {{Invoice.Taxes| number}}</td>
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>ДДС: {{Order.VAT| number}}</td>
+                    <td></td>
+                    <td></td>
+                    <td>ДДС: {{Invoice.VAT| number}}</td>
                 </tr>
                 <tr class="total">
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>Общо: {{Order.Total| number}}</td>
+                    <td></td>
+                    <td></td>
+                    <td>Общо: {{Invoice.Total| number}}</td>
                 </tr>
             </table>
 
@@ -159,7 +171,7 @@
                 </tr>
             </table>
 
-            <div class="order-footer">Благодарим за доверието!</div>
+            <div class="invoice-footer">Благодарим за доверието!</div>
 
         </div>
     </body>
