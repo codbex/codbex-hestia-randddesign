@@ -1,7 +1,7 @@
 const viewData = {
     id: 'goods-issue-print',
     label: 'Print',
-    link: '/services/web/codbex-inventory/print/GoodsIssue/print-goods-issue.html',
+    link: '/services/web/codbex-hestia-randddesign/codbex-inventory-print/print-goods-issue.html',
     perspective: 'GoodsIssues',
     view: 'GoodsIssue',
     type: 'entity',
