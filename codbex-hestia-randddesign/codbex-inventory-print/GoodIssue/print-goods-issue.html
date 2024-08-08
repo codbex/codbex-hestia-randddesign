@@ -6,19 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" sizes="any" href="data:;base64,iVBORw0KGgo=">
         <title dg-view-title></title>
-        <script type="text/javascript" src="purchase-order-print.js"></script>
+        <script type="text/javascript" src="goods-issue-print.js"></script>
         <script type="text/javascript" src="/services/js/resources-core/services/loader.js?id=ide-view-js"></script>
         <link type="text/css" rel="stylesheet" href="/services/js/resources-core/services/loader.js?id=ide-view-css" />
         <theme></theme>
         <link rel="stylesheet"
-            href="/services/web/codbex-hestia-randddesign/codbex-orders-print/PurchaseOrder/print-purchase-order.css">
-        <script
-            src="/services/web/codbex-hestia-randddesign/codbex-orders-print/PurchaseOrder/print-purchase-order-controller.js">
+            href="/services/web/codbex-hestia-randddesign/codbex-inventory-print/print-goods-issue.css">
+        <script src="/services/web/codbex-hestia-randddesign/codbex-inventory-print/print-goods-issue-controller.js">
         </script>
     </head>
 
     <body>
-        <div class="order-box">
+        <div class="date-box">
             <table cellpadding="0" cellspacing="0">
                 <tr class="top">
                     <td colspan="2">
@@ -29,9 +28,8 @@
                                 </td>
 
                                 <td>
-                                    Поръчка #: <b>{{Order.Number}}</b><br />
-                                    Дата на поръчка: <b>{{Order.Date | date: 'yyyy-MM-dd'}}</b><br />
-                                    Падежна дата: <b>{{Order.Due | date: 'yyyy-MM-dd'}}</b>
+                                    Дата: <b>{{GoodsIssue.Date | date: 'yyyy-MM-dd'}}</b><br />
+                                    Номер: <b>{{GoodsIssue.Number}}</b>
                                 </td>
                             </tr>
                         </table>
@@ -39,7 +37,7 @@
                 </tr>
             </table>
 
-            <div class="order-jumbo">ПОРЪЧКА ЗА ПОКУПКА</div>
+            <div class="issue-jumbo">СТОКОВА РАЗПИСКА</div>
 
             <table cellpadding="0" cellspacing="0">
                 <tr class="information">
@@ -53,10 +51,10 @@
                                 </td>
 
                                 <td>
-                                    <b>{{Supplier.Name}}</b><br />
-                                    {{Supplier.Contact}}<br />
-                                    {{Supplier.Email}}<br />
-                                    ДДС #: <b>{{Supplier.TIN}}</b>
+                                    <b>{{Store.Name}}</b><br />
+                                    {{Store.Phone}}<br />
+                                    {{Store.Email}}<br />
+                                    {{Store.Address}}<br />
                                 </td>
                             </tr>
                         </table>
@@ -66,71 +64,21 @@
 
             <table cellpadding="0" cellspacing="0">
                 <tr class="heading">
-                    <td>Метод на плащане</td>
-                    <td>Изпращане чрез</td>
-                    <td>Условия</td>
-                </tr>
-
-                <tr class="details">
-                    <td>{{Order.PaymentMethod.Name}}</td>
-                    <td>{{Order.SentMethod.Name}}</td>
-                    <td>{{Order.Conditions}}</td>
-                </tr>
-            </table>
-            <table cellpadding="0" cellspacing="0">
-                <tr class="heading">
                     <td>Артикул</td>
-                    <td>Коричество</td>
+                    <td>Колечества</td>
                     <td>Цена</td>
                     <td>Нето</td>
                     <td>ДДС</td>
                     <td>Бруто</td>
                 </tr>
 
-                <tr class="item" ng-repeat="next in OrderItems">
+                <tr class="item" ng-repeat="next in GoodsIssueItems">
                     <td>{{next.Product}}</td>
                     <td>{{next.Quantity| number}}</td>
                     <td>{{next.Price| number}}</td>
                     <td>{{next.Net| number}}</td>
                     <td>{{next.VAT| number}}</td>
                     <td>{{next.Gross| number}}</td>
-
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>Нето: {{Order.Net| number}}</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>Бруто: {{Order.Gross| number}}</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>Отстъпка: {{Order.Discount| number}}</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>Данъци: {{Order.Taxes| number}}</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>ДДС: {{Order.VAT| number}}</td>
-                </tr>
-                <tr class="total">
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>Общо: {{Order.Total| number}}</td>
                 </tr>
             </table>
 
@@ -159,7 +107,7 @@
                 </tr>
             </table>
 
-            <div class="order-footer">Благодарим за доверието!</div>
+            <div class="issue-footer">Благодарим за доверието!</div>
 
         </div>
     </body>

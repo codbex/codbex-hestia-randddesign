@@ -12,7 +12,8 @@
         <theme></theme>
         <link rel="stylesheet"
             href="/services/web/codbex-hestia-randddesign/codbex-orders-print/SalesOrder/print-sales-order.css">
-        <script src="/services/web/codbex-hestia-randddesign/codbex-orders-print/SalesOrder/print-sales-order-controller.js">
+        <script
+            src="/services/web/codbex-hestia-randddesign/codbex-orders-print/SalesOrder/print-sales-order-controller.js">
         </script>
     </head>
 
@@ -24,14 +25,13 @@
                         <table>
                             <tr>
                                 <td class="title">
-                                    <img src="https://www.codbex.com/favicon.png"
-                                        style="width: 100%; max-width: 50px" />
+                                    <img src="https://shorturl.at/NCWw6" style="width: 100%; max-width: 100px" />
                                 </td>
 
                                 <td>
-                                    Order #: <b>{{Order.Number}}</b><br />
-                                    Order Date: <b>{{Order.Date | date: 'yyyy-MM-dd'}}</b><br />
-                                    Due Date: <b>{{Order.Due | date: 'yyyy-MM-dd'}}</b>
+                                    Поръчка #: <b>{{Order.Number}}</b><br />
+                                    Дата на поръчка: <b>{{Order.Date | date: 'yyyy-MM-dd'}}</b><br />
+                                    Падежна дата: <b>{{Order.Due | date: 'yyyy-MM-dd'}}</b>
                                 </td>
                             </tr>
                         </table>
@@ -39,7 +39,7 @@
                 </tr>
             </table>
 
-            <div class="order-jumbo">SALES ORDER</div>
+            <div class="order-jumbo">ПОРЪЧКА ЗА ПРОДАЖБА</div>
 
             <table cellpadding="0" cellspacing="0">
                 <tr class="information">
@@ -56,7 +56,7 @@
                                     <b>{{Customer.Name}}</b><br />
                                     {{Customer.Contact}}<br />
                                     {{Customer.Email}}<br />
-                                    VAT #: <b>{{Customer.TIN}}</b>
+                                    БУЛСТАТ #: <b>{{Customer.TIN}}</b>
                                 </td>
                             </tr>
                         </table>
@@ -66,9 +66,9 @@
 
             <table cellpadding="0" cellspacing="0">
                 <tr class="heading">
-                    <td>Payment Method</td>
-                    <td>Sent Via</td>
-                    <td>Conditions</td>
+                    <td>Метод на плащане</td>
+                    <td>Изпращане чрез</td>
+                    <td>Условия</td>
                 </tr>
 
                 <tr class="details">
@@ -79,13 +79,13 @@
             </table>
             <table cellpadding="0" cellspacing="0">
                 <tr class="heading">
-                    <td>Item</td>
-                    <td>Status</td>
-                    <td>Quantity</td>
-                    <td>Price</td>
-                    <td>Net</td>
-                    <td>VAT</td>
-                    <td>Gross</td>
+                    <td>Артикул</td>
+                    <td>Статус</td>
+                    <td>Количество</td>
+                    <td>Цена</td>
+                    <td>Нето</td>
+                    <td>ДДС</td>
+                    <td>Бруто</td>
                 </tr>
 
                 <tr class="item" ng-repeat="next in OrderItems">
@@ -104,7 +104,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>Net: {{Order.Net| number}}</td>
+                    <td>Нето: {{Order.Net| number}}</td>
                 </tr>
                 <tr>
                     <td></td>
@@ -112,7 +112,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>Gross: {{Order.Gross| number}}</td>
+                    <td>Бруто: {{Order.Gross| number}}</td>
                 </tr>
                 <tr>
                     <td></td>
@@ -120,7 +120,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>Discount: {{Order.Discount| number}}</td>
+                    <td>Отстъпка: {{Order.Discount| number}}</td>
                 </tr>
                 <tr>
                     <td></td>
@@ -128,7 +128,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>Taxes: {{Order.Taxes| number}}</td>
+                    <td>Данъци: {{Order.Taxes| number}}</td>
                 </tr>
                 <tr>
                     <td></td>
@@ -136,7 +136,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>VAT: {{Order.VAT| number}}</td>
+                    <td>ДДС: {{Order.VAT| number}}</td>
                 </tr>
                 <tr class="total">
                     <td></td>
@@ -144,7 +144,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>Total: {{Order.Total| number}}</td>
+                    <td>Общо: {{Order.Total| number}}</td>
                 </tr>
             </table>
 
@@ -157,15 +157,15 @@
                         <table>
                             <tr>
                                 <td>
-                                    TIN #: <b>{{Company.TIN}}</b><br />
-                                    e-mail: {{Company.Email}}<br />
-                                    Phone: {{Company.Phone}}
+                                    БУЛСТАТ #: <b>{{Company.TIN}}</b><br />
+                                    Имейл: {{Company.Email}}<br />
+                                    Телефон: {{Company.Phone}}
                                 </td>
 
                                 <td>
                                     IBAN: <b>{{Company.IBAN}}</b><br />
                                     SWIFT: {{Company.SWIFT}}<br />
-                                    Bank: {{Company.Bank}}
+                                    Банка: {{Company.Bank}}
                                 </td>
                             </tr>
                         </table>
@@ -173,7 +173,7 @@
                 </tr>
             </table>
 
-            <div class="order-footer">THANK YOU FOR YOUR BUSINESS!</div>
+            <div class="order-footer">Благодарим за доверието!</div>
 
         </div>
     </body>

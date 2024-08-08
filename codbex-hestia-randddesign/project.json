@@ -1,9 +1,9 @@
 {
-    "guid": "codbex-hestia-print",
+    "guid": "codbex-hestia-randdesign",
     "repository": {
         "type": "git",
         "branch": "main",
-        "url": "https://github.com/codbex/codbex-hestia-randdesign.git"
+        "url": "https://github.com/codbex/codbex-order-inventory-ext.git"
     },
     "dependencies": [],
     "actions": [
