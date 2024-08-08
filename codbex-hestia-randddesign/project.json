@@ -1,4 +1,25 @@
 {
-    "guid":"codbex-hestia-randdesign",
-    "actions": []
+    "guid": "codbex-hestia-print",
+    "repository": {
+        "type": "git",
+        "branch": "main",
+        "url": "https://github.com/codbex/codbex-hestia-randdesign.git"
+    },
+    "dependencies": [],
+    "actions": [
+        {
+            "name": "Build TypeScript",
+            "commands": [
+                {
+                    "os": "unix",
+                    "command": "tsc"
+                },
+                {
+                    "os": "windows",
+                    "command": "cmd /c tsc"
+                }
+            ],
+            "registry": "true"
+        }
+    ]
 }
