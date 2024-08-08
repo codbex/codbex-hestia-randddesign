@@ -30,7 +30,7 @@
 
                                 <td>
                                     Фактура #: <b>{{Invoice.Number}}</b><br />
-                                    Дата на фактуриране: <b>{{Invoice.Date | date: 'yyyy-MM-dd'}}</b><br />
+                                    Дата на издаване: <b>{{Invoice.Date | date: 'yyyy-MM-dd'}}</b><br />
                                     Падежна дата: <b>{{Invoice.Due | date: 'yyyy-MM-dd'}}</b>
                                 </td>
                             </tr>
@@ -39,7 +39,7 @@
                 </tr>
             </table>
 
-            <div class="invoice-jumbo">ФАКТУРА ЗА ПРОДАЖБА</div>
+            <div class="invoice-jumbo">ФАКТУРА</div>
 
             <table cellpadding="0" cellspacing="0">
                 <tr class="information">
@@ -56,7 +56,7 @@
                                     <b>{{Customer.Name}}</b><br />
                                     {{Customer.Contact}}<br />
                                     {{Customer.Email}}<br />
-                                    ДДС #: <b>{{Customer.TIN}}</b>
+                                    БУЛСТАТ #: <b>{{Customer.TIN}}</b>
                                 </td>
                             </tr>
                         </table>
