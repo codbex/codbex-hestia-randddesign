@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="templateApp" ng-controller="templateController">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" sizes="any" href="data:;base64,iVBORw0KGgo=">
+        <title dg-view-title></title>
+        <script type="text/javascript" src="delivery-note-print.js"></script>
+        <script type="text/javascript" src="/services/js/resources-core/services/loader.js?id=ide-view-js"></script>
+        <link type="text/css" rel="stylesheet" href="/services/js/resources-core/services/loader.js?id=ide-view-css" />
+        <theme></theme>
+        <link rel="stylesheet"
+            href="/services/web/codbex-hestia-randddesign/codbex-inventory-print/DeliveryNote/print-delivery-note.css">
+        <script
+            src="/services/web/codbex-hestia-randddesign/codbex-inventory-print/DeliveryNote/print-delivery-note-controller.js">
+        </script>
+    </head>
+
+    <body>
+        <div class="date-box">
+            <table cellpadding="0" cellspacing="0">
+                <tr class="top">
+                    <td colspan="2">
+                        <table>
+                            <tr>
+                                <td class="title">
+                                    <img src="/services/web/codbex-hestia-randddesign/logo/randdesign-logo.png"
+                                        style="width: 100%; max-width: 100px" />
+                                </td>
+
+                                <td>
+                                    Дата на доставка: <b>{{DeliveryNote.Date | date: 'yyyy-MM-dd'}}</b><br />
+                                    Номер на доставка: <b>{{DeliveryNote.Number}}</b>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="issue-jumbo">Бележка за доставка</div>
+
+            <table cellpadding="0" cellspacing="0">
+                <tr class="information">
+                    <td colspan="2">
+                        <table>
+                            <tr>
+                                <td>
+                                    <b>{{Company.Name}}</b><br />
+                                    {{Company.Address}}<br />
+                                    {{Company.PostCode}}, {{Company.City}}, {{Company.Country}}
+                                </td>
+
+                                <td>
+                                    <b>{{Store.Name}}</b><br />
+                                    {{Store.Phone}}<br />
+                                    {{Store.Email}}<br />
+                                    {{Store.Address}}<br />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <table cellpadding="0" cellspacing="0">
+                <tr class="heading">
+                    <td>Артикул</td>
+                    <td>Количество</td>
+                </tr>
+
+                <tr class="item" ng-repeat="next in DeliveryNoteItems">
+                    <td>{{next.Product}}</td>
+                    <td>{{next.Quantity| number}}</td>
+                </tr>
+            </table>
+
+            <hr />
+            <br />
+
+
+            <table cellpadding="0" cellspacing="0">
+                <tr class="information">
+                    <td colspan="2">
+                        <table>
+                            <tr>
+                                <td>
+                                    <b>Служител:</b> {{Employee}}<br />
+                                    <b>Клиент:</b> {{Customer}}<br />
+                                </td>
+
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+
+            <div class="issue-footer">Благодарим за доверието!</div>
+
+        </div>
+    </body>
+
+</html>

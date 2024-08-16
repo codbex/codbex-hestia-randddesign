@@ -1,0 +1,5 @@
+{
+    "module": "codbex-hestia-randddesign/codbex-inventory-print/DeliveryNote/delivery-note-print.js",
+    "extensionPoint": "codbex-inventory-custom-action",
+    "description": "Print Delivery Note Custom Action"
+}
