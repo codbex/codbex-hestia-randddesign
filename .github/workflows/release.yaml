@@ -1,0 +1,35 @@
+name: Release - Module
+
+on:
+  workflow_dispatch:
+    inputs:
+      release-version:
+        description: Release Version
+        required: true
+        default: 1.0.0
+
+run-name: 'version set to ${{ inputs.release-version }} for release'
+
+jobs:
+  main:
+    uses: codbex/codbex-infra/.github/workflows/module-release.yaml@main
+    with:
+      packages: codbex-hestia-randddesign
+      packages-build: codbex-hestia-randddesign
+      release-version: ${{ inputs.release-version }}
+      release-content: |
+        ## codbex-hestia-randddesign - ${{ inputs.release-version }}
+  
+        R&D Design
+  
+        ## Installation
+  
+        ```
+        npm install @codbex/codbex-hestia-randddesign@${{ inputs.release-version }}
+
+        ```
+  
+        ## Access points:
+  
+        - N/A
+    secrets: inherit
